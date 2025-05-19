@@ -18,6 +18,6 @@ router.get('/logout', logout);
 router.post('/upload-profile', protectedRoute, upload.single("file"), uploadProfilePic);
 router.delete('/delete-profile', protectedRoute, deletProfilePic);
 
-router.get('/check', protectedRoute, checkAuth)
+router.get('/check', checkAuth)
 
 export default router;
