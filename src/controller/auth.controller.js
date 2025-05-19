@@ -92,7 +92,6 @@ export const logout = (req, res) => {
 
 export const checkAuth = (req, res) => {
     try {
-      
         res.status(200).json(req.user);
     } catch (error) {
         console.log(error.message)
