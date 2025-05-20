@@ -25,7 +25,11 @@ app.use(express.json());
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ["http://localhost:5173", "https://resivana.onrender.com/"];
+      const allowedOrigins = [
+        "http://localhost:5173",
+        "https://resivana.onrender.com/",
+        "https://resivana.vercel.app/",
+      ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
