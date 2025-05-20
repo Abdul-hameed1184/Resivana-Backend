@@ -28,12 +28,12 @@ app.use(
       "http://localhost:5173",
       "https://resivana.onrender.com",
       "https://resivana-abdul-hameeds-projects-3a791a40.vercel.app",
-      "https://resivana.vercel.app/",
-      "https://vercel.com/abdul-hameeds-projects-3a791a40/resivana/EaksLMKzTsSNi3JXns25KQXSqdEp",
+      "https://resivana.vercel.app",
     ],
     credentials: true,
   })
 );
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/property", propertiesRoutes);
