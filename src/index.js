@@ -24,18 +24,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: (origin, callback) => {
-      const allowedOrigins = [
-        "http://localhost:5173",
-        "https://resivana.onrender.com/",
-        "https://resivana.vercel.app/",
-      ];
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: [
+      "http://localhost:5173",
+      "https://resivana.onrender.com",
+      "https://resivana-abdul-hameeds-projects-3a791a40.vercel.app",
+      "https://resivana.vercel.app/",
+      "https://vercel.com/abdul-hameeds-projects-3a791a40/resivana/EaksLMKzTsSNi3JXns25KQXSqdEp",
+    ],
     credentials: true,
   })
 );
