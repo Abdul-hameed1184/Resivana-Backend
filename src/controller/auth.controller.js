@@ -83,12 +83,18 @@ export const login = async (req, res) => {
 };
 export const logout = (req, res) => {
   try {
-    res.cookie("jwt", "", { maxAge: 0 });
+    res.cookie("jwt", "", {
+      httpOnly: true,
+      secure: true,
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      expires: new Date(0), // alternative to maxAge: 0
+    });
     res.status(200).json({ message: "Logged out successfully" });
   } catch (error) {
     res.status(500).json({ message: "Internal Server error" });
   }
 };
+
 
 export const checkAuth = (req, res) => {
     try {
